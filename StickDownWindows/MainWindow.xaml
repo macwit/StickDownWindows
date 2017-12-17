@@ -7,6 +7,21 @@
         mc:Ignorable="d"
         Title="StickDown" Height="350" Width="525">
     <Grid>
-        
+        <StackPanel>
+            <Border BorderBrush="Black" BorderThickness="1" Margin="5,5,5,5">
+                <TextBlock Name="MainTextBlock" ScrollViewer.HorizontalScrollBarVisibility="Auto" Height="200" Margin="5,5,5,5"></TextBlock>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" Margin="5,5,5,5">
+                <StackPanel Name="LoginStackPanel" Height="50" Orientation="Horizontal">
+                    <Button Name="LoginGoogleButton" Click="LoginGoogleButton_OnClick" Margin="5,5,5,5">Google Login</Button>
+                    <Button Name="LoginFacebookButton" Click="LoginFacebookButton_OnClick" Margin="5,5,5,5">Facebook Login</Button>
+                </StackPanel>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="1" Margin="5,5,5,5">
+                <StackPanel>
+
+                </StackPanel>
+            </Border>
+        </StackPanel>
     </Grid>
 </Window>

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.WindowsAzure.MobileServices;
+using Newtonsoft.Json.Linq;
 
 namespace StickDownWindows
 {
@@ -23,6 +25,26 @@ namespace StickDownWindows
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private async void LoginGoogleButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            var token = await (new Services.Login.GoogleLoginHelper()).LoginWithGoogleByDefaultBrowser();
+
+            bool isLogin =
+                await new Services.Login.ClientAzure().Login(MobileServiceAuthenticationProvider.Google, JObject.FromObject(token));
+
+            if (isLogin)
+                MainTextBlock.Text = "Zalogowano";
+            else
+                MainTextBlock.Text = "Failed";
+
+
+        }
+
+        private void LoginFacebookButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
