@@ -37,6 +37,9 @@ namespace StickDownWindows.Services.Login
 
             LocalAccountStoreProvider.StoreUserAccountInSecureStore(MobileServiceClient.CurrentUser, ProviderType);
 
+
+            var store = MobileServiceClient.GetTable<Note>();
+
             return true;
         }
 

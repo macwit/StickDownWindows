@@ -90,6 +90,7 @@
     <Compile Include="Services\Login\Tokens\FacebookToken.cs" />
     <Compile Include="Services\Login\Tokens\GoogleOfflineToken.cs" />
     <Compile Include="Services\Providers\AccountStoreProvider.cs" />
+    <Compile Include="Services\Providers\StoreProvider.cs" />
     <Compile Include="WindowsResources.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
